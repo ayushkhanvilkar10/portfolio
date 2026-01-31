@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Sidebar from "@/components/Sidebar";
+import Navigation from "@/components/Navigation";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -13,7 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Sidebar />
+        <div className="md:ml-64">
+          <Navigation />
+          <main className="pt-16">{children}</main>
+        </div>
+      </body>
     </html>
   );
 }
