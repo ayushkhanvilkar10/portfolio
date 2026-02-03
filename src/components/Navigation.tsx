@@ -93,8 +93,8 @@ export default function Navigation() {
                 onClick={closeMenu}
                 className="text-3xl text-white hover:text-gray-400 transition-colors"
                 style={{
-                  fontFamily: '"Playfair Display", serif',
-                  fontWeight: 500,
+                  fontFamily: '"Space Mono", monospace',
+                  fontWeight: 400,
                 }}
               >
                 {item.label}

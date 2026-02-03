@@ -1,8 +1,9 @@
 import TypingText from "@/components/TypingText";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { TiltSpotlight } from "@/components/TiltSpotlight";
+import { BeamsBackground } from "@/components/ui/beams-background";
+import { Timeline } from "@/components/ui/timeline";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 
 const skills = [
   {
@@ -65,22 +66,29 @@ export default function Home() {
   return (
     <>
       {/* About Me Section */}
-      <section id="about" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
-        <div className="max-w-4xl mx-auto">
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white"
-            style={{
-              fontFamily: '"Playfair Display", serif',
-              fontWeight: 600,
-            }}
-          >
-            <TypingText text="Hello! I am Ayush" speed={80} />
-          </h1>
-          <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
-            A Software Engineer with 4 years of experience building products that are as technically powerful as they are deeply human. From architecting enterprise trading platforms at JPMorgan Chase to leading frontend development on a Chan Zuckerberg-backed AI app that helps non-English-speaking parents navigate critical services—I bring engineering rigor to mission-driven work.
-          </p>
-        </div>
-      </section>
+      <BeamsBackground className="min-h-[600px]" intensity="medium">
+        <section id="about" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
+          <div className="max-w-4xl mx-auto">
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white"
+              style={{
+                fontFamily: '"Space Mono", monospace',
+                fontWeight: 400,
+              }}
+            >
+              <TypingText text="Hello! I am Ayush" speed={80} />
+            </h1>
+            <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
+              A Software Engineer with 4 years of experience building products that are as technically powerful as they are deeply human. From architecting enterprise trading platforms at JPMorgan Chase to leading frontend development on a Chan Zuckerberg-backed AI app that helps non-English-speaking parents navigate critical services—I bring engineering rigor to mission-driven work.
+            </p>
+            
+            {/* Interactive Tilt Card */}
+            <div className="mt-12">
+              <TiltSpotlight />
+            </div>
+          </div>
+        </section>
+      </BeamsBackground>
 
       {/* Programming Skills Section */}
       <section id="skills" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 bg-gray-900">
@@ -88,8 +96,8 @@ export default function Home() {
           <h2
             className="text-2xl sm:text-3xl md:text-4xl mb-8 md:mb-12 text-white"
             style={{
-              fontFamily: '"Playfair Display", serif',
-              fontWeight: 500,
+              fontFamily: '"Space Mono", monospace',
+              fontWeight: 400,
             }}
           >
             Programming Skills
@@ -117,49 +125,52 @@ export default function Home() {
       </section>
 
       {/* Work Experience Section */}
-      <section id="experience" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
-        <div className="max-w-4xl mx-auto">
+      <section id="experience" className="py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 mb-8">
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl mb-8 md:mb-12 text-white"
+            className="text-2xl sm:text-3xl md:text-4xl text-white"
             style={{
-              fontFamily: '"Playfair Display", serif',
-              fontWeight: 500,
-              fontStyle: 'italic',
+              fontFamily: '"Space Mono", monospace',
+              fontWeight: 400,
             }}
           >
             Work Experience
           </h2>
-          <div className="space-y-8">
-            {workExperience.map((job, index) => (
-              <Card key={job.company} className="border-none shadow-none bg-transparent">
-                <CardHeader className="px-0">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                    <div>
-                      <CardTitle className="text-xl font-semibold text-white">{job.company}</CardTitle>
-                      <CardDescription className="text-base mt-1 text-gray-400">
-                        {job.role} • {job.location}
-                      </CardDescription>
-                    </div>
-                    <span className="text-sm text-gray-400 sm:text-right whitespace-nowrap">
-                      {job.period}
-                    </span>
-                  </div>
-                </CardHeader>
-                <CardContent className="px-0">
-                  <p className="text-gray-300 mb-4 leading-relaxed">{job.summary}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {job.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs bg-gray-800 text-gray-300 hover:bg-gray-700">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                {index < workExperience.length - 1 && <Separator className="mt-6 bg-gray-800" />}
-              </Card>
-            ))}
-          </div>
         </div>
+        <Timeline
+          data={workExperience.map((job) => ({
+            title: job.period.split(" - ")[0].replace("Jan ", "").replace("April ", "").replace("July ", ""),
+            content: (
+              <div>
+                <h4 className="text-lg md:text-xl font-semibold text-white mb-1">
+                  {job.company}
+                </h4>
+                <p className="text-sm md:text-base text-gray-400 mb-4">
+                  {job.role} • {job.location}
+                </p>
+                <p className="text-gray-300 text-sm md:text-base mb-6 leading-relaxed">
+                  {job.summary}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {job.technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary" className="text-xs bg-gray-800 text-gray-300 hover:bg-gray-700">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+                {/* Placeholder for images - you can add them later */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-lg bg-gray-800/50 h-20 md:h-44 lg:h-60 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">
+                    Image placeholder
+                  </div>
+                  <div className="rounded-lg bg-gray-800/50 h-20 md:h-44 lg:h-60 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">
+                    Image placeholder
+                  </div>
+                </div>
+              </div>
+            ),
+          }))}
+        />
       </section>
 
       {/* Contact Section */}
@@ -168,8 +179,8 @@ export default function Home() {
           <h2
             className="text-2xl sm:text-3xl md:text-4xl mb-6 text-white"
             style={{
-              fontFamily: '"Playfair Display", serif',
-              fontWeight: 700,
+              fontFamily: '"Space Mono", monospace',
+              fontWeight: 400,
             }}
           >
             Get In Touch
