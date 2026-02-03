@@ -3,9 +3,10 @@
 import { useState } from "react";
 
 const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Web Dev", href: "#webdev" },
-  { label: "AI", href: "#ai" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navigation() {
@@ -17,12 +18,9 @@ export default function Navigation() {
   return (
     <>
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 md:left-64 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <h1 className="text-xl font-bold text-gray-900">Logo</h1>
-
+          <div className="flex items-center justify-end h-16">
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-2">
               {navItems.map((item) => (
