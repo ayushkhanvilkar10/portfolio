@@ -23,7 +23,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="bg-gray-950 text-white">
         {/* <Sidebar /> */}
         <div>
           <Navigation />

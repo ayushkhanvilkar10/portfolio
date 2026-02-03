@@ -18,7 +18,7 @@ export default function Navigation() {
   return (
     <>
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-end h-16">
             {/* Desktop Navigation */}
@@ -27,7 +27,7 @@ export default function Navigation() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                 >
                   {item.label}
                 </a>
@@ -38,11 +38,11 @@ export default function Navigation() {
             {!isMenuOpen && (
               <button
                 onClick={toggleMenu}
-                className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors"
                 aria-label="Open menu"
               >
                 <svg
-                  className="w-6 h-6 text-gray-700"
+                  className="w-6 h-6 text-gray-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -62,15 +62,15 @@ export default function Navigation() {
 
       {/* Full-Page Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white md:hidden">
+        <div className="fixed inset-0 z-50 bg-gray-950 md:hidden">
           {/* Close Button */}
           <button
             onClick={closeMenu}
-            className="absolute top-4 right-4 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="absolute top-4 right-4 p-2 rounded-lg hover:bg-gray-800 transition-colors"
             aria-label="Close menu"
           >
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6 text-gray-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -91,7 +91,11 @@ export default function Navigation() {
                 key={item.label}
                 href={item.href}
                 onClick={closeMenu}
-                className="text-3xl font-semibold text-gray-900 hover:text-gray-600 transition-colors"
+                className="text-3xl text-white hover:text-gray-400 transition-colors"
+                style={{
+                  fontFamily: '"Playfair Display", serif',
+                  fontWeight: 500,
+                }}
               >
                 {item.label}
               </a>

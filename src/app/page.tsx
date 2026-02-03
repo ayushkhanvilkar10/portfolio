@@ -68,43 +68,43 @@ export default function Home() {
       <section id="about" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
         <div className="max-w-4xl mx-auto">
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white"
             style={{
-              fontFamily: '"Cormorant", serif',
-              fontWeight: 500,
+              fontFamily: '"Playfair Display", serif',
+              fontWeight: 600,
             }}
           >
             <TypingText text="Hello! I am Ayush" speed={80} />
           </h1>
-          <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
+          <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
             A Software Engineer with 4 years of experience building products that are as technically powerful as they are deeply human. From architecting enterprise trading platforms at JPMorgan Chase to leading frontend development on a Chan Zuckerberg-backed AI app that helps non-English-speaking parents navigate critical services—I bring engineering rigor to mission-driven work.
           </p>
         </div>
       </section>
 
       {/* Programming Skills Section */}
-      <section id="skills" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 bg-gray-50">
+      <section id="skills" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl mb-8 md:mb-12"
+            className="text-2xl sm:text-3xl md:text-4xl mb-8 md:mb-12 text-white"
             style={{
-              fontFamily: '"Cormorant", serif',
+              fontFamily: '"Playfair Display", serif',
               fontWeight: 500,
             }}
           >
             Programming Skills
           </h2>
-          <div className="divide-y divide-gray-200">
+          <div className="divide-y divide-gray-700">
           {skills.map((skillGroup) => (
             <div key={skillGroup.category} className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-5 first:pt-0 last:pb-0">
-              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider sm:w-48 sm:flex-shrink-0">
+              <h3 className="text-sm font-semibold text-gray-100 uppercase tracking-wider sm:w-48 sm:flex-shrink-0">
                 {skillGroup.category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 text-sm bg-white text-gray-700 rounded-full border border-gray-200 hover:border-gray-400 transition-colors"
+                    className="px-3 py-1 text-sm bg-gray-800 text-gray-300 rounded-full border border-gray-700 hover:border-gray-500 transition-colors"
                   >
                     {skill}
                   </span>
@@ -120,41 +120,42 @@ export default function Home() {
       <section id="experience" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
         <div className="max-w-4xl mx-auto">
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl mb-8 md:mb-12"
+            className="text-2xl sm:text-3xl md:text-4xl mb-8 md:mb-12 text-white"
             style={{
-              fontFamily: '"Cormorant", serif',
+              fontFamily: '"Playfair Display", serif',
               fontWeight: 500,
+              fontStyle: 'italic',
             }}
           >
             Work Experience
           </h2>
           <div className="space-y-8">
             {workExperience.map((job, index) => (
-              <Card key={job.company} className="border-none shadow-none">
+              <Card key={job.company} className="border-none shadow-none bg-transparent">
                 <CardHeader className="px-0">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div>
-                      <CardTitle className="text-xl font-semibold">{job.company}</CardTitle>
-                      <CardDescription className="text-base mt-1">
+                      <CardTitle className="text-xl font-semibold text-white">{job.company}</CardTitle>
+                      <CardDescription className="text-base mt-1 text-gray-400">
                         {job.role} • {job.location}
                       </CardDescription>
                     </div>
-                    <span className="text-sm text-gray-500 sm:text-right whitespace-nowrap">
+                    <span className="text-sm text-gray-400 sm:text-right whitespace-nowrap">
                       {job.period}
                     </span>
                   </div>
                 </CardHeader>
                 <CardContent className="px-0">
-                  <p className="text-gray-700 mb-4 leading-relaxed">{job.summary}</p>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{job.summary}</p>
                   <div className="flex flex-wrap gap-2">
                     {job.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
+                      <Badge key={tech} variant="secondary" className="text-xs bg-gray-800 text-gray-300 hover:bg-gray-700">
                         {tech}
                       </Badge>
                     ))}
                   </div>
                 </CardContent>
-                {index < workExperience.length - 1 && <Separator className="mt-6" />}
+                {index < workExperience.length - 1 && <Separator className="mt-6 bg-gray-800" />}
               </Card>
             ))}
           </div>
@@ -162,22 +163,22 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 bg-gray-50">
+      <section id="contact" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2
-            className="text-2xl sm:text-3xl md:text-4xl mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl mb-6 text-white"
             style={{
-              fontFamily: '"Cormorant", serif',
-              fontWeight: 500,
+              fontFamily: '"Playfair Display", serif',
+              fontWeight: 700,
             }}
           >
             Get In Touch
           </h2>
-          <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             I&apos;m always open to discussing new opportunities, interesting projects, or just having a conversation about technology and its potential to make a positive impact.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="bg-white text-gray-900 hover:bg-gray-200">
               <a href="mailto:ayush@example.com">
                 <svg
                   className="w-4 h-4 mr-2"
@@ -195,7 +196,7 @@ export default function Home() {
                 Email Me
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white">
               <a href="https://linkedin.com/in/ayush" target="_blank" rel="noopener noreferrer">
                 <svg
                   className="w-4 h-4 mr-2"
@@ -207,7 +208,7 @@ export default function Home() {
                 LinkedIn
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white">
               <a href="https://github.com/ayush" target="_blank" rel="noopener noreferrer">
                 <svg
                   className="w-4 h-4 mr-2"
