@@ -4,6 +4,7 @@ import { BeamsBackground } from "@/components/ui/beams-background";
 import { Timeline } from "@/components/ui/timeline";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { BGPattern } from "@/components/ui/bg-pattern";
 
 const skills = [
   {
@@ -59,6 +60,7 @@ const workExperience = [
     summary:
       "Developed end-to-end flows for FX Orders in Execute, an award-winning Macro Trading Platform processing transactions of $1M-$10M. Introduced Swap product types using advanced TypeScript patterns, engineered reusable UI components in an enterprise monorepo driving consistency across 5+ FX products, and optimized React rendering through selective Redux subscriptions and memoized selectors. Implemented 15+ custom validators reducing order errors by 73%, enhanced async workflows with Redux-Observable epics, and built an efficient Protobuf data marshalling layer achieving 200ms order execution.",
     technologies: ["React", "TypeScript", "RxJS", "Redux", "Final Form", "Protobuf", "Jenkins"],
+    images: ["/jpmorgan-mobile.png", "/jpmorgan-platform.png"],
   },
 ];
 
@@ -91,7 +93,8 @@ export default function Home() {
       </BeamsBackground>
 
       {/* Programming Skills Section */}
-      <section id="skills" className="px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 bg-gray-900">
+      <section id="skills" className="relative px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
+        <BGPattern variant="grid" mask="fade-edges" />
         <div className="max-w-4xl mx-auto">
           <h2
             className="text-2xl sm:text-3xl md:text-4xl mb-8 md:mb-12 text-white"
@@ -102,24 +105,26 @@ export default function Home() {
           >
             Programming Skills
           </h2>
-          <div className="divide-y divide-gray-700">
-          {skills.map((skillGroup) => (
-            <div key={skillGroup.category} className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-5 first:pt-0 last:pb-0">
-              <h3 className="text-sm font-semibold text-gray-100 uppercase tracking-wider sm:w-48 sm:flex-shrink-0">
-                {skillGroup.category}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skillGroup.items.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 text-sm bg-gray-800 text-gray-300 rounded-full border border-gray-700 hover:border-gray-500 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+          <div className="bg-gray-900/80 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-gray-800">
+            <div className="divide-y divide-gray-700">
+              {skills.map((skillGroup) => (
+                <div key={skillGroup.category} className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 py-5 first:pt-0 last:pb-0">
+                  <h3 className="text-sm font-semibold text-gray-100 uppercase tracking-wider sm:w-48 sm:flex-shrink-0">
+                    {skillGroup.category}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {skillGroup.items.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-sm bg-gray-800 text-gray-300 rounded-full border border-gray-700 hover:border-gray-500 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
           </div>
         </div>
       </section>
@@ -158,15 +163,29 @@ export default function Home() {
                     </Badge>
                   ))}
                 </div>
-                {/* Placeholder for images - you can add them later */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-lg bg-gray-800/50 h-20 md:h-44 lg:h-60 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">
-                    Image placeholder
+                {/* Work images */}
+                {job.images ? (
+                  <div className="grid grid-cols-2 gap-4">
+                    {job.images.map((image, idx) => (
+                      <div key={idx} className="rounded-lg overflow-hidden h-20 md:h-44 lg:h-60 w-full">
+                        <img 
+                          src={image} 
+                          alt={`${job.company} work screenshot ${idx + 1}`}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ))}
                   </div>
-                  <div className="rounded-lg bg-gray-800/50 h-20 md:h-44 lg:h-60 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">
-                    Image placeholder
+                ) : (
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="rounded-lg bg-gray-800/50 h-20 md:h-44 lg:h-60 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">
+                      Image placeholder
+                    </div>
+                    <div className="rounded-lg bg-gray-800/50 h-20 md:h-44 lg:h-60 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">
+                      Image placeholder
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             ),
           }))}
