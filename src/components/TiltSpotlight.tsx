@@ -31,7 +31,7 @@ export function TiltSpotlight() {
         <img
           src="https://images.beta.cosmos.so/40fbc749-6796-485b-9588-20204dd7c8f0?format=jpeg"
           alt="2001: A Space Odyssey"
-          className="h-48 w-full rounded-lg object-cover grayscale duration-700 group-hover:grayscale-0"
+          className="h-48 w-full rounded-lg object-cover"
         />
       </Tilt>
       <div className="flex flex-col space-y-0.5 pb-0 pt-3">
