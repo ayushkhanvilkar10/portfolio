@@ -4,8 +4,8 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "My portfolio",
+  title: "Ayush Khanvilkar",
+  description: "Software Engineer",
 };
 
 export default function RootLayout({
