@@ -9,19 +9,19 @@ import { BGPattern } from "@/components/ui/bg-pattern";
 const skills = [
   {
     category: "Languages",
-    items: ["JavaScript", "TypeScript", "HTML5", "CSS3", "Python", "Java"],
+    items: ["JavaScript", "Python", "Java", "TypeScript", "HTML5", "CSS3"],
   },
   {
-    category: "Frontend Libraries",
-    items: ["React", "Vue.js", "Next.js", "Redux", "Tailwind", "Vuex", "RxJS", "React Query"],
+    category: "Frontend",
+    items: ["React", "Vue.js", "Next.js", "Redux", "Tailwind", "RxJS", "React Query"],
   },
   {
-    category: "Design Systems & Data Viz",
-    items: ["Material UI", "Storybook", "Responsive Design", "Accessibility", "D3.js", "Chart.js", "Recharts"],
+    category: "Backend",
+    items: ["Node.js", "AWS Lambda", "Step Functions", "API Gateway", "Cognito", "SNS", "REST APIs", "GraphQL"],
   },
   {
-    category: "API Integration",
-    items: ["RESTful APIs", "GraphQL", "Node.js"],
+    category: "AI",
+    items: ["OpenAI API", "Multi-Agent Systems", "Pydantic", "OCR (Mistral)", "RAG", "LangChain", "LangGraph", "MCP"],
   },
   {
     category: "Cloud & Databases",
@@ -80,14 +80,25 @@ export default function Home() {
             >
               <TypingText text="Hello! I am Ayush" speed={80} />
             </h1>
+
             <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
-              A Software Engineer with 4 years of experience building products that are as technically powerful as they are deeply human. From architecting enterprise trading platforms at JPMorgan Chase to leading frontend development on a Chan Zuckerberg-backed AI app that helps non-English-speaking parents navigate critical services—I bring engineering rigor to mission-driven work.
+              A Software Engineer passionate about building products 0 → 1. Every phase of the process excites me: develop the frontend, wire up the AI agents, deploy the infrastructure, and iterate until it actually works.
+              Most recently, I built AI-EP, an agentic AI platform that takes dense, jargon-heavy education plans and makes them genuinely accessible for parents of children with special needs. 
+            </p>
+
+            <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
+            Before my Master's at Northeastern, I spent three years at J.P. Morgan, where I learned to write code that handles millions in FX trades without flinching.             
+            Enterprise taught me rigor and reliability. Building from zero I learned how to apply to engineer products that move people.
             </p>
             
             {/* Interactive Tilt Card */}
             <div className="mt-12">
               <TiltSpotlight />
             </div>
+
+            <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
+            Ever since I first discovered 2001: A Space Odyssey, I made myself a promise. The first time I watch this film, it has to be in a theatre. That moment finally came at Boston's iconic Coolidge Corner Cinema, right after my AI Engineering class. The conversations between Dave and HAL felt surreal. By the time I was watching them on screen, I was already building agents of my own. As an engineer eternally experimenting with AI, I'm on my own odyssey, harnessing agentic AI to build products that move the world forward.
+            </p>
           </div>
         </section>
       </BeamsBackground>
