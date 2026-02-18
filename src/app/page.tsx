@@ -97,8 +97,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
-            Ever since I first discovered 2001: A Space Odyssey, I made myself a promise. The first time I watch this film, it has to be in a theatre. That moment finally came at Boston's iconic Coolidge Corner Cinema, right after my AI Engineering class. The conversations between Dave and HAL felt surreal. By the time I was watching them on screen, I was already building agents of my own. As an engineer eternally experimenting with AI, I'm on my own odyssey, harnessing agentic AI to build products that move the world forward.
-            </p>
+            I promised myself I'd see 2001: A Space Odyssey for the first time in a theatre. When I finally did, right after my AI Engineering class, Dave and HAL's conversations hit different. I was already building agents of my own. As an engineer eternally experimenting with AI, I'm on my own odyssey, harnessing agentic AI to build products that move the world forward.            </p>
           </div>
         </section>
       </BeamsBackground>
