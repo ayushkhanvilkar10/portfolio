@@ -174,7 +174,7 @@ export default function Home() {
                   ))}
                 </div>
                 {/* Work images */}
-                {job.images ? (
+                {job.images && (
                   <div className="grid grid-cols-2 gap-4">
                     {job.images.map((image, idx) => (
                       <div key={idx} className="rounded-lg overflow-hidden h-20 md:h-44 lg:h-60 w-full">
@@ -185,15 +185,6 @@ export default function Home() {
                         />
                       </div>
                     ))}
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-lg bg-gray-800/50 h-20 md:h-44 lg:h-60 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">
-                      Image placeholder
-                    </div>
-                    <div className="rounded-lg bg-gray-800/50 h-20 md:h-44 lg:h-60 w-full border border-gray-700 flex items-center justify-center text-gray-500 text-sm">
-                      Image placeholder
-                    </div>
                   </div>
                 )}
               </div>
