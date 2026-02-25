@@ -88,7 +88,7 @@ export default function Home() {
 
             <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-300">
             Before my Master's at Northeastern, I spent three years at J.P. Morgan, where I learned to write code that handles millions in FX trades without flinching.             
-            Enterprise taught me rigor and reliability. Building from zero I applied these learning to engineer products that move people.
+            Enterprise taught me rigor and reliability. Building from zero I applied these learnings to engineer products that move people.
             </p>
             
             {/* Interactive Tilt Card */}
